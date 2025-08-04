@@ -1,0 +1,265 @@
+{% extends "base.html" %}
+
+{% block title %}DevCourt - Advanced Court Data Fetcher{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero">
+    <div class="hero-container">
+        <div class="hero-content" data-aos="fade-up">
+            <h1 class="hero-title">
+                DevCourt
+                <span class="gradient-text">Court Data Fetcher</span>
+            </h1>
+            <p class="hero-subtitle">
+                Advanced platform for fetching and analyzing court case data from Indian courts. 
+                Get instant access to case details, orders, and judgments with our intelligent scraping technology.
+            </p>
+            <div class="hero-buttons">
+                <a href="#court-fetcher" class="btn btn-primary">
+                    <i class="fas fa-search"></i>
+                    Start Searching
+                </a>
+                <a href="/features" class="btn btn-secondary">
+                    <i class="fas fa-info-circle"></i>
+                    Learn More
+                </a>
+            </div>
+        </div>
+        
+        <div class="hero-visual" data-aos="fade-left">
+            <div class="floating-card">
+                <div class="card-header">
+                    <i class="fas fa-gavel"></i>
+                    <span>Case Search</span>
+                </div>
+                <div class="card-content">
+                    <div class="search-animation">
+                        <div class="search-bar">
+                            <input type="text" placeholder="Enter case number..." disabled>
+                            <button disabled><i class="fas fa-search"></i></button>
+                        </div>
+                        <div class="results-preview">
+                            <div class="result-item">
+                                <span class="case-type">Civil</span>
+                                <span class="case-number">123/2024</span>
+                            </div>
+                            <div class="result-item">
+                                <span class="case-type">Criminal</span>
+                                <span class="case-number">456/2024</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Tech Stack Section -->
+<section class="tech-stack">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Tech Stack</h2>
+        <div class="tech-grid">
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="100">
+                <i class="fab fa-python"></i>
+                <h3>Python</h3>
+                <p>Flask backend with BeautifulSoup for web scraping</p>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="200">
+                <i class="fab fa-js"></i>
+                <h3>JavaScript</h3>
+                <p>Modern ES6+ with async/await for dynamic interactions</p>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="300">
+                <i class="fab fa-html5"></i>
+                <h3>HTML5</h3>
+                <p>Semantic markup with accessibility features</p>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="400">
+                <i class="fab fa-css3-alt"></i>
+                <h3>CSS3</h3>
+                <p>Tesla-inspired design with animations and transitions</p>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="500">
+                <i class="fas fa-database"></i>
+                <h3>SQLite</h3>
+                <p>Lightweight database for query logging and storage</p>
+            </div>
+            <div class="tech-item" data-aos="fade-up" data-aos-delay="600">
+                <i class="fas fa-cloud"></i>
+                <h3>Cloud Ready</h3>
+                <p>Docker containerized for easy deployment</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Court Data Fetcher Section -->
+<section id="court-fetcher" class="court-fetcher">
+    <div class="container">
+        <div class="fetcher-header" data-aos="fade-up">
+            <h2 class="section-title">Court Data Fetcher</h2>
+            <p class="section-subtitle">
+                Search for case details from Delhi High Court and other Indian courts
+            </p>
+        </div>
+        
+        <div class="fetcher-container">
+            <div class="search-form" data-aos="fade-up">
+                <form id="caseSearchForm">
+                    <div class="form-group">
+                        <label for="caseType">Case Type</label>
+                        <select id="caseType" name="caseType" required>
+                            <option value="">Select Case Type</option>
+                            <option value="civil">Civil</option>
+                            <option value="criminal">Criminal</option>
+                            <option value="writ">Writ Petition</option>
+                            <option value="appeal">Appeal</option>
+                            <option value="revision">Revision</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="caseNumber">Case Number</label>
+                        <input type="text" id="caseNumber" name="caseNumber" placeholder="e.g., 123/2024" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="filingYear">Filing Year</label>
+                        <input type="number" id="filingYear" name="filingYear" min="2000" max="2024" value="2024" required>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-full">
+                        <i class="fas fa-search"></i>
+                        Search Case
+                    </button>
+                </form>
+            </div>
+            
+            <div class="results-container" data-aos="fade-up">
+                <div id="loadingSpinner" class="loading-spinner" style="display: none;">
+                    <div class="spinner"></div>
+                    <p>Searching court database...</p>
+                </div>
+                
+                <div id="caseResults" class="case-results" style="display: none;">
+                    <div class="case-header">
+                        <h3>Case Details</h3>
+                        <span class="case-status pending">Pending</span>
+                    </div>
+                    
+                    <div class="case-info">
+                        <div class="info-group">
+                            <label>Petitioner:</label>
+                            <span id="petitionerName">-</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Respondent:</label>
+                            <span id="respondentName">-</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Filing Date:</label>
+                            <span id="filingDate">-</span>
+                        </div>
+                        <div class="info-group">
+                            <label>Next Hearing:</label>
+                            <span id="nextHearing">-</span>
+                        </div>
+                    </div>
+                    
+                    <div class="orders-section">
+                        <h4>Latest Orders</h4>
+                        <div id="ordersList" class="orders-list">
+                            <!-- Orders will be populated here -->
+                        </div>
+                    </div>
+                </div>
+                
+                <div id="errorMessage" class="error-message" style="display: none;">
+                    <i class="fas fa-exclamation-triangle"></i>
+                    <p id="errorText">An error occurred while searching. Please try again.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Features Preview -->
+<section class="features-preview">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Smart Search</h3>
+                <p>Advanced search algorithms to find cases across multiple court databases</p>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>PDF Downloads</h3>
+                <p>Direct access to court orders and judgments in PDF format</p>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Search History</h3>
+                <p>Track your previous searches and access them anytime</p>
+            </div>
+            
+            <div class="feature-card" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Secure & Reliable</h3>
+                <p>Built with security best practices and error handling</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Get In Touch</h2>
+        <div class="contact-content">
+            <div class="contact-info" data-aos="fade-up">
+                <div class="contact-item">
+                    <i class="fab fa-github"></i>
+                    <div>
+                        <h4>GitHub</h4>
+                        <a href="https://github.com/DevanshSharma-GIT" target="_blank">DevanshSharma-GIT</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <h4>Portfolio</h4>
+                        <a href="https://devanshsharma-git.github.io/Portfolio-/" target="_blank">View Portfolio</a>
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-envelope"></i>
+                    <div>
+                        <h4>Email</h4>
+                        <a href="mailto:devansh.work6@gmail.com">devansh.work6@gmail.com</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
+
+{% block extra_scripts %}
+<script src="{{ url_for('static', filename='js/court-fetcher.js') }}"></script>
+{% endblock %} 

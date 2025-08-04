@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+
+{% block title %}Features - DevCourt{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="container">
+        <h1 class="page-title" data-aos="fade-up">Features</h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Discover the powerful capabilities of DevCourt's court data fetching platform
+        </p>
+    </div>
+</section>
+
+<!-- Features Grid -->
+<section class="features-detailed">
+    <div class="container">
+        <div class="features-grid">
+            <div class="feature-card-large" data-aos="fade-up">
+                <div class="feature-icon-large">
+                    <i class="fas fa-search"></i>
+                </div>
+                <h3>Advanced Case Search</h3>
+                <p>Our intelligent search system can find cases across multiple court databases including Delhi High Court and district courts. The system supports various case types including Civil, Criminal, Writ Petitions, Appeals, and Revisions.</p>
+                <ul class="feature-list">
+                    <li>Multi-court database search</li>
+                    <li>Fuzzy matching for case numbers</li>
+                    <li>Advanced filtering options</li>
+                    <li>Real-time search suggestions</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card-large" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-icon-large">
+                    <i class="fas fa-file-pdf"></i>
+                </div>
+                <h3>PDF Document Management</h3>
+                <p>Direct access to court orders and judgments in PDF format. Download and manage court documents with ease.</p>
+                <ul class="feature-list">
+                    <li>One-click PDF downloads</li>
+                    <li>Document preview functionality</li>
+                    <li>Organized document storage</li>
+                    <li>Search within PDF content</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card-large" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-icon-large">
+                    <i class="fas fa-history"></i>
+                </div>
+                <h3>Search History & Analytics</h3>
+                <p>Track your search history and analyze patterns. Get insights into your most searched cases and court types.</p>
+                <ul class="feature-list">
+                    <li>Complete search history</li>
+                    <li>Search analytics dashboard</li>
+                    <li>Export search results</li>
+                    <li>Bookmark important cases</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card-large" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-icon-large">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <h3>Security & Reliability</h3>
+                <p>Built with security best practices and robust error handling to ensure reliable access to court data.</p>
+                <ul class="feature-list">
+                    <li>Encrypted data transmission</li>
+                    <li>Rate limiting protection</li>
+                    <li>Comprehensive error handling</li>
+                    <li>Regular security updates</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card-large" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-icon-large">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Responsive Design</h3>
+                <p>Access DevCourt from any device with our fully responsive design that works seamlessly on desktop, tablet, and mobile.</p>
+                <ul class="feature-list">
+                    <li>Mobile-first design</li>
+                    <li>Touch-friendly interface</li>
+                    <li>Cross-browser compatibility</li>
+                    <li>Offline capability</li>
+                </ul>
+            </div>
+            
+            <div class="feature-card-large" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-icon-large">
+                    <i class="fas fa-cloud"></i>
+                </div>
+                <h3>Cloud Deployment Ready</h3>
+                <p>Deploy DevCourt anywhere with our Docker containerized setup and cloud-ready architecture.</p>
+                <ul class="feature-list">
+                    <li>Docker containerization</li>
+                    <li>Cloud deployment guides</li>
+                    <li>Scalable architecture</li>
+                    <li>Environment configuration</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technical Specifications -->
+<section class="tech-specs">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Technical Specifications</h2>
+        <div class="specs-grid">
+            <div class="spec-item" data-aos="fade-up" data-aos-delay="100">
+                <h4>Backend</h4>
+                <ul>
+                    <li>Python 3.8+</li>
+                    <li>Flask Framework</li>
+                    <li>SQLite Database</li>
+                    <li>BeautifulSoup4 for scraping</li>
+                    <li>Requests library</li>
+                </ul>
+            </div>
+            
+            <div class="spec-item" data-aos="fade-up" data-aos-delay="200">
+                <h4>Frontend</h4>
+                <ul>
+                    <li>HTML5 & CSS3</li>
+                    <li>Vanilla JavaScript (ES6+)</li>
+                    <li>Tesla-inspired design</li>
+                    <li>AOS animations</li>
+                    <li>Font Awesome icons</li>
+                </ul>
+            </div>
+            
+            <div class="spec-item" data-aos="fade-up" data-aos-delay="300">
+                <h4>Deployment</h4>
+                <ul>
+                    <li>Docker containerization</li>
+                    <li>GitHub integration</li>
+                    <li>Environment variables</li>
+                    <li>Logging system</li>
+                    <li>Error handling</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2>Ready to Get Started?</h2>
+            <p>Experience the power of DevCourt's advanced court data fetching capabilities.</p>
+            <a href="/#court-fetcher" class="btn btn-primary">
+                <i class="fas fa-rocket"></i>
+                Start Searching Now
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %} 

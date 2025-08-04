@@ -1,0 +1,199 @@
+{% extends "base.html" %}
+
+{% block title %}About - DevCourt{% endblock %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="page-hero">
+    <div class="container">
+        <h1 class="page-title" data-aos="fade-up">About DevCourt</h1>
+        <p class="page-subtitle" data-aos="fade-up" data-aos-delay="100">
+            Advanced court data fetching platform built with modern web technologies
+        </p>
+    </div>
+</section>
+
+<!-- Project Overview -->
+<section class="about-overview">
+    <div class="container">
+        <div class="overview-content">
+            <div class="overview-text" data-aos="fade-up">
+                <h2>Project Overview</h2>
+                <p>
+                    DevCourt is a comprehensive web application designed to fetch and display court case data from Indian courts. 
+                    Built as part of the Think Act Rise Court internship assignment, this platform demonstrates advanced web scraping 
+                    capabilities, modern UI/UX design, and robust backend architecture.
+                </p>
+                <p>
+                    The application targets court websites like Delhi High Court and district courts on the eCourts portal, 
+                    providing users with easy access to case details, orders, and judgments through an intuitive interface.
+                </p>
+            </div>
+            
+            <div class="overview-stats" data-aos="fade-up" data-aos-delay="200">
+                <div class="stat-item">
+                    <span class="stat-number">5+</span>
+                    <span class="stat-label">Court Types</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">24/7</span>
+                    <span class="stat-label">Availability</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">100%</span>
+                    <span class="stat-label">Secure</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Developer Information -->
+<section class="developer-info">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Developer</h2>
+        <div class="developer-card" data-aos="fade-up">
+            <div class="developer-avatar">
+                <i class="fas fa-user-circle"></i>
+            </div>
+            <div class="developer-details">
+                <h3>Devansh Sharma</h3>
+                <p class="developer-title">Full Stack Developer</p>
+                <p class="developer-bio">
+                    Passionate developer with expertise in Python, JavaScript, and modern web technologies. 
+                    Specialized in building scalable web applications with focus on user experience and performance.
+                </p>
+                <div class="developer-links">
+                    <a href="https://github.com/DevanshSharma-GIT" target="_blank" class="social-link">
+                        <i class="fab fa-github"></i>
+                        GitHub
+                    </a>
+                    <a href="https://devanshsharma-git.github.io/Portfolio-/" target="_blank" class="social-link">
+                        <i class="fas fa-globe"></i>
+                        Portfolio
+                    </a>
+                    <a href="mailto:devansh.work6@gmail.com" class="social-link">
+                        <i class="fas fa-envelope"></i>
+                        Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Project Features -->
+<section class="project-features">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Key Features Implemented</h2>
+        <div class="features-list">
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="100">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Simple UI Form</h4>
+                    <p>Clean HTML form with dropdowns for Case Type, Case Number, and Filing Year</p>
+                </div>
+            </div>
+            
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="200">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Backend Processing</h4>
+                    <p>Flask backend that programmatically requests court sites and parses case data</p>
+                </div>
+            </div>
+            
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="300">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Data Storage</h4>
+                    <p>SQLite database to log queries and raw responses for audit trail</p>
+                </div>
+            </div>
+            
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="400">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Data Display</h4>
+                    <p>Beautiful rendering of parsed case details with PDF download capabilities</p>
+                </div>
+            </div>
+            
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="500">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Error Handling</h4>
+                    <p>User-friendly error messages for invalid cases or site downtime</p>
+                </div>
+            </div>
+            
+            <div class="feature-item" data-aos="fade-up" data-aos-delay="600">
+                <div class="feature-check">
+                    <i class="fas fa-check"></i>
+                </div>
+                <div class="feature-content">
+                    <h4>Tesla-Inspired Design</h4>
+                    <p>Modern, responsive UI with animations and transitions inspired by Tesla's design language</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Technical Approach -->
+<section class="technical-approach">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Technical Approach</h2>
+        <div class="approach-content">
+            <div class="approach-item" data-aos="fade-up" data-aos-delay="100">
+                <h4>Web Scraping Strategy</h4>
+                <p>
+                    The application uses BeautifulSoup4 and Requests library to scrape court websites. 
+                    The approach includes handling view-state tokens and implementing CAPTCHA bypass strategies 
+                    through legal means such as rate limiting and user-agent rotation.
+                </p>
+            </div>
+            
+            <div class="approach-item" data-aos="fade-up" data-aos-delay="200">
+                <h4>Data Parsing</h4>
+                <p>
+                    Advanced parsing algorithms extract parties' names, filing dates, next hearing dates, 
+                    and order/judgment PDF links from the court website responses.
+                </p>
+            </div>
+            
+            <div class="approach-item" data-aos="fade-up" data-aos-delay="300">
+                <h4>Security & Reliability</h4>
+                <p>
+                    Built with security best practices including input validation, SQL injection prevention, 
+                    and comprehensive error handling to ensure robust operation.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Call to Action -->
+<section class="cta-section">
+    <div class="container">
+        <div class="cta-content" data-aos="fade-up">
+            <h2>Ready to Experience DevCourt?</h2>
+            <p>Try out the advanced court data fetching capabilities today.</p>
+            <a href="/#court-fetcher" class="btn btn-primary">
+                <i class="fas fa-gavel"></i>
+                Start Searching
+            </a>
+        </div>
+    </div>
+</section>
+{% endblock %} 
